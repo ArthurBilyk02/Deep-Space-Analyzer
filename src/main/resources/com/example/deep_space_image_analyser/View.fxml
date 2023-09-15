@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="540.0" prefWidth="838.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.deep_space_image_analyser.Controller">
+   <children>
+      <HBox fx:id="Images" alignment="CENTER" layoutX="-2.0" prefHeight="306.0" prefWidth="844.0" style="-fx-background-color: grey;">
+         <children>
+            <ImageView fx:id="selectedimage" fitHeight="250.0" fitWidth="266.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="grayscaleImage" fitHeight="252.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="returnedImage" fitHeight="250.0" fitWidth="258.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <HBox fx:id="Buttons" alignment="CENTER" layoutX="115.0" layoutY="413.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="135.0" prefWidth="607.0" style="-fx-background-color: grey;">
+         <children>
+            <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#choosePhoto" text="Select Image" />
+            <Button mnemonicParsing="false" onAction="#processImage" text="Process Image" />
+         </children>
+      </HBox>
+      <AnchorPane fx:id="Controller" layoutX="115.0" layoutY="296.0" prefHeight="119.0" prefWidth="607.0" style="-fx-background-color: grey;">
+         <children>
+            <Slider fx:id="minPixels" blockIncrement="2.0" layoutX="110.0" layoutY="30.0" min="1.0" orientation="VERTICAL" prefHeight="77.0" prefWidth="14.0" showTickMarks="true" snapToTicks="true" value="1.0" />
+            <Slider fx:id="maxPixels" blockIncrement="2.0" layoutX="292.0" layoutY="29.0" min="1.0" orientation="VERTICAL" prefHeight="78.0" prefWidth="14.0" showTickMarks="true" snapToTicks="true" value="50.0" />
+            <Slider fx:id="light" blockIncrement="0.1" layoutX="488.0" layoutY="29.0" majorTickUnit="1.0" max="1.0" minorTickCount="1" orientation="VERTICAL" prefHeight="78.0" prefWidth="18.0" showTickMarks="true" value="0.5" />
+            <Label fx:id="minPixel" layoutX="81.0" layoutY="117.0" text="Min Pixel Size" />
+            <Label fx:id="Light" layoutX="453.0" layoutY="117.0" text="Light Threshold" />
+            <Label fx:id="maxPixel" layoutX="262.0" layoutY="117.0" text="Max Pixel Size" />
+            <Label fx:id="minPixelValueLabel" layoutX="161.0" layoutY="117.0" text="1" />
+            <Label fx:id="maxPixelValueLabel" layoutX="343.0" layoutY="117.0" text="50" />
+            <Label fx:id="lightValueLabel" layoutX="547.0" layoutY="117.0" text="0.5" />
+         </children>
+      </AnchorPane>
+      <RadioButton fx:id="numberSelection" layoutX="717.0" layoutY="297.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="127.0" style="-fx-background-color: gray;" text="Enable numbering" />
+   </children>
+</AnchorPane>
